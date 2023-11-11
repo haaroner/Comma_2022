@@ -40,7 +40,8 @@
 .\objects\openmv.o: .\src\spl4\inc\stm32f4xx_fsmc.h
 .\objects\openmv.o: D:\keil\sys_files\ARM\ARMCC\Bin\..\include\math.h
 .\objects\openmv.o: D:\keil\sys_files\ARM\ARMCC\Bin\..\include\string.h
-.\objects\openmv.o: .\src\usart6\usart6.h
+.\objects\openmv.o: .\src\UART\usart6\usart6.h
 .\objects\openmv.o: .\src\main\project_config.h
 .\objects\openmv.o: .\src\pin_setup\pin_setup.h
 .\objects\openmv.o: .\src\main\project_config.h
+.\objects\openmv.o: .\src\main\tools.h

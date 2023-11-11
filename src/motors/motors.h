@@ -1,7 +1,7 @@
 #pragma once
 #include "project_config.h"
 #include "motor.h"
-#include "tools.h"
+//#include "tools.h"
 
 class motors 
 {
@@ -19,9 +19,8 @@ class motors
 										 double _angle,
 										 double _inc,
                      uint32_t _time,
-                     uint32_t _instant_start_timer,
-                     int16_t _gyro);
-  int lead_to_degree_borders(int _num);
+                     uint32_t _instant_start_timer);
+  //int lead_to_degree_borders(int _num);
   void disableMotors(); 
   void _move_vector();                     
 	private:

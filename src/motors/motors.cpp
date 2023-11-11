@@ -1,8 +1,5 @@
 #include "motors.h"
-
-#define adduction(x) {while(x>=180)x-=360;while(x<-180)x+=360;}
-#define RAD2DEG	57.2957795130823208767
-#define DEG2RAD	0.01745329251994329576
+#include "tools.h"
 
 motors::motors(Motor& m1, 
 					 Motor& m2,
@@ -20,17 +17,17 @@ motors::motors(Motor& m1,
   
 }
 
-int motors::lead_to_degree_borders(int _num)
-{
-  while(_num < -180 || _num > 180)
-  {
-    if(_num < -180)
-        _num += 360;
-    else if(_num > 180)
-        _num -= 360;
-  }
-  return _num;
-}
+//int motors::lead_to_degree_borders(int _num)
+//{
+//  while(_num < -180 || _num > 180)
+//  {
+//    if(_num < -180)
+//        _num += 360;
+//    else if(_num > 180)
+//        _num -= 360;
+//  }
+//  return _num;
+//}
 
 void motors::moveMotor(int32_t power)
 {
@@ -62,8 +59,7 @@ void motors::moveRobot(double _maxPower,
 										 double _angle,
 										 double _inc,
                      uint32_t _time,
-                     uint32_t _instant_start_timer,
-                     int16_t _gyro)
+                     uint32_t _instant_start_timer)
 {
   //_maxPower = calculate_power(_maxPower);
   //_maxPower_angle = calculate_power(_maxPower_angle);

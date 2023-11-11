@@ -2,16 +2,14 @@
 #include "project_config.h"
 #include "usart6.h"
 #include "pin_setup.h"
-
-#define RAD2DEG	57.2957795130823208767
-#define DEG2RAD	0.01745329251994329576
+#include "tools.h"
 
 class camera
 {
 	public:
 		camera(pin &tx, pin &rx);
 		void getData();
-    uint16_t lead_to_degree_borders(int num);
+    //uint16_t lead_to_degree_borders(int num);
     void calculate_pos(int16_t angle, bool side);
 		int16_t get_x();
 		int16_t get_y();
@@ -20,6 +18,13 @@ class camera
     int16_t get_forward_distance();
     int16_t get_backward_distance();
     uint8_t get_data_state();
+    int16_t get_ball_angle();
+    int16_t get_abs_ball_angle();
+    int16_t get_ball_distance();
+    int16_t get_ball_loc_x();
+    int16_t get_ball_loc_y();
+    int16_t get_ball_abs_x();
+    int16_t get_ball_abs_y();
     bool is_first_data_received();
 
 	private:
@@ -31,6 +36,11 @@ class camera
     int _yellow_angle;
     int _blue_distance;
 		int _blue_angle;
+    int _ball_angle;
+    int _abs_ball_angle;
+    int _ball_distance;
+    int _ball_loc_x, _ball_loc_y;
+    int _ball_abs_x, _ball_abs_y;
     int _front_angle;
     int _front_distance;
     int _backward_distance;
@@ -52,7 +62,8 @@ class camera
     bool _received;
     bool _first_receive;
     bool _yellow_first_receive, _blue_first_receive;
-		uint8_t data[5];
+    bool _ball_is_seen;
+		uint8_t data[7];
 		uint8_t crc8(uint8_t* data, int len);
     uint8_t _state;
     

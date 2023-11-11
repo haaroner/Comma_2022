@@ -1,5 +1,5 @@
-.\objects\usart3.o: src\usart3\usart3.cpp
-.\objects\usart3.o: src\usart3\usart3.h
+.\objects\usart3.o: src\UART\usart3\usart3.cpp
+.\objects\usart3.o: src\UART\usart3\usart3.h
 .\objects\usart3.o: .\src\main\project_config.h
 .\objects\usart3.o: .\src\global_macros\global_macros.h
 .\objects\usart3.o: .\src\global_macros\stm32f4xx_global_macros.h

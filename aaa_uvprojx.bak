@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F407xx,STM32F40_41xxx, USE_STDPERIPH_DRIVER,  HSE_VALUE = 8000000, USE_HSE</Define>
               <Undefine></Undefine>
-              <IncludePath>.\src\main;.\src\external;.\src\spl4;.\src\global_macros;.\src\spl4\inc;.\src\spl4\src;.\src\support_pacage\inc;.\src\support_pacage\arm;.\src\support_pacage\gcc;.\src\support_pacage\gcc\linker;.\src\support_pacage;.\src\cmsis;.\src\usart3;.\src\OpenMV;.\src\pin_setup;.\src\motor;.\src\motors;.\src\IRLocator;.\src\usart6;.\src\time_service;.\src\kicker;.\src\i2c;.\src\SPI;.\src\SPI\SPI_1;.\src\SPI\SPI_2;.\src\SPI\SPI_3;.\src\ball_detour;.\src\usart2;.\src\UART;.\src\bluetooth\hc-05;.\src\robot_math;.\src\dribler;.\src\adc;.\src\dma;.\src\main;.\src\TSSP;.\src\voltmeter;.\src\mpu9250_spi;.\src\SPI_DOT;.\src\Field;.\src\TSSP;.\src\robot_math</IncludePath>
+              <IncludePath>.\src\main;.\src\external;.\src\spl4;.\src\global_macros;.\src\spl4\inc;.\src\spl4\src;.\src\support_pacage\inc;.\src\support_pacage\arm;.\src\support_pacage\gcc;.\src\support_pacage\gcc\linker;.\src\support_pacage;.\src\cmsis;.\src\OpenMV;.\src\pin_setup;.\src\motor;.\src\motors;.\src\IRLocator;.\src\time_service;.\src\kicker;.\src\i2c;.\src\SPI;.\src\ball_detour;.\src\UART;.\src\robot_math;.\src\dribler;.\src\adc;.\src\dma;.\src\main;.\src\voltmeter;.\src\mpu9250_spi;.\src\SPI_DOT;.\src\UART\usart2;.\src\UART\usart3;.\src\UART\usart6</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -423,6 +423,16 @@
               <FileType>5</FileType>
               <FilePath>.\src\main\tools.h</FilePath>
             </File>
+            <File>
+              <FileName>Settings.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Settings.h</FilePath>
+            </File>
+            <File>
+              <FileName>tools.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\tools.cpp</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
@@ -490,21 +500,6 @@
               <FileName>stm32f4xx_dma.c</FileName>
               <FileType>1</FileType>
               <FilePath>.\src\spl4\src\stm32f4xx_dma.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>usart3</GroupName>
-          <Files>
-            <File>
-              <FileName>usart3.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\usart3\usart3.h</FilePath>
-            </File>
-            <File>
-              <FileName>usart3.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\usart3\usart3.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -580,21 +575,6 @@
               <FileName>time_service.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\time_service\time_service.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>usart6</GroupName>
-          <Files>
-            <File>
-              <FileName>usart6.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\usart6\usart6.h</FilePath>
-            </File>
-            <File>
-              <FileName>usart6.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\usart6\usart6.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -687,24 +667,34 @@
           <GroupName>UART</GroupName>
           <Files>
             <File>
-              <FileName>UART.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\UART\UART.h</FilePath>
+              <FileName>uart2.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\UART\usart2\uart2.cpp</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>uart2</GroupName>
-          <Files>
             <File>
               <FileName>usart2.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\src\usart2\usart2.h</FilePath>
+              <FilePath>.\src\UART\usart2\usart2.h</FilePath>
             </File>
             <File>
-              <FileName>uart2.cpp</FileName>
+              <FileName>usart3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\UART\usart3\usart3.h</FilePath>
+            </File>
+            <File>
+              <FileName>usart3.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\src\usart2\uart2.cpp</FilePath>
+              <FilePath>.\src\UART\usart3\usart3.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>usart6.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\UART\usart6\usart6.h</FilePath>
+            </File>
+            <File>
+              <FileName>usart6.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\UART\usart6\usart6.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -862,14 +852,14 @@
               <FilePath>.\src\mpu9250_spi\mpu9250_spi.h</FilePath>
             </File>
             <File>
-              <FileName>IMU_SPI.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\IMU_SPI.h</FilePath>
-            </File>
-            <File>
               <FileName>mpu9250_registers_spi.h</FileName>
               <FileType>5</FileType>
               <FilePath>.\src\mpu9250_spi\mpu9250_registers_spi.h</FilePath>
+            </File>
+            <File>
+              <FileName>IMU_SPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\mpu9250_spi\IMU_SPI.h</FilePath>
             </File>
           </Files>
         </Group>

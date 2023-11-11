@@ -21,13 +21,21 @@ Target DLL:      STLink\ST-LINKIII-KEIL_SWO.dll V3.0.8.0
 Dialog DLL:      TCM.DLL V1.48.0.0
  
 <h2>Project:</h2>
-C:\Users\Clown\Desktop\GIT\Comma_2022_rfinitst_main\aaa.uvprojx
-Project File Date:  10/09/2023
+C:\Users\Clown\Desktop\GIT\Comma_2023_open\aaa.uvprojx
+Project File Date:  11/11/2023
 
 <h2>Output:</h2>
 *** Using Compiler 'V5.06 update 7 (build 960)', folder: 'D:\keil\sys_files\ARM\ARMCC\Bin'
 Build target 'Target 1'
-".\Objects\aaa.axf" - 0 Error(s), 0 Warning(s).
+compiling main.cpp...
+.\src\Robot\Robot.h(88): warning:  #186-D: pointless comparison of unsigned integer with zero
+      if(_speed < 0) _speed *= -1;
+.\src\Robot\Robot.h(109): warning:  #1-D: last line of file ends without a newline
+  }
+main.cpp: 2 warnings, 0 errors
+linking...
+Program Size: Code=34986 RO-data=1154 RW-data=288 ZI-data=10320  
+".\Objects\aaa.axf" - 0 Error(s), 2 Warning(s).
 
 <h2>Software Packages used:</h2>
 
@@ -40,7 +48,7 @@ Package Vendor: Keil
   D:\keil\pack_folder\Keil\STM32F4xx_DFP\2.16.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include
 
 <h2>Collection of Component Files used:</h2>
-Build Time Elapsed:  00:00:00
+Build Time Elapsed:  00:00:01
 </pre>
 </body>
 </html>

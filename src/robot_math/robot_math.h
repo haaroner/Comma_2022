@@ -15,9 +15,9 @@ double convert_data(double max, double data)
   uint16_t _data;
   _data = (data - max) / max + 1;
   
-  if(_data > 1)
+  if(_data > 1.0)
     _data = 1;
-  else if(_data < 0)
+  else if(_data < 0.0)
     _data = 0;
   
   return _data;
@@ -89,7 +89,7 @@ uint16_t get_distance_to_point(int16_t _robot_x, int16_t _robot_y, int16_t _poin
   return sqrt(pow(double(_x_result), 2) + pow(double(_y_result), 2));
 }
 
-uint16_t calculate_angle_near_side_out(int16_t robot_x, int16_t angle, double speed, int16_t x_min, int16_t x_max)
+void calculate_angle_near_side_out(int16_t robot_x, int16_t angle, double speed, int16_t x_min, int16_t x_max)
 {
   speed = speed / 30.03;
   x1 = speed * sin(angle / 57.3);

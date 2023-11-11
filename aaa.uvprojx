@@ -339,7 +339,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F407xx,STM32F40_41xxx, USE_STDPERIPH_DRIVER,  HSE_VALUE = 8000000, USE_HSE</Define>
               <Undefine></Undefine>
-              <IncludePath>.\src\main;.\src\external;.\src\spl4;.\src\global_macros;.\src\spl4\inc;.\src\spl4\src;.\src\support_pacage\inc;.\src\support_pacage\arm;.\src\support_pacage\gcc;.\src\support_pacage\gcc\linker;.\src\support_pacage;.\src\cmsis;.\src\usart3;.\src\OpenMV;.\src\pin_setup;.\src\motor;.\src\motors;.\src\IRLocator;.\src\usart6;.\src\time_service;.\src\kicker;.\src\i2c;.\src\SPI;.\src\SPI\SPI_1;.\src\SPI\SPI_2;.\src\SPI\SPI_3;.\src\ball_detour;.\src\usart2;.\src\UART;.\src\bluetooth\hc-05;.\src\robot_math;.\src\dribler;.\src\adc;.\src\dma;.\src\main;.\src\TSSP;.\src\voltmeter;.\src\mpu9250_spi;.\src\SPI_DOT;.\src\Field;.\src\TSSP</IncludePath>
+              <IncludePath>.\src\main;.\src\external;.\src\spl4;.\src\global_macros;.\src\spl4\inc;.\src\spl4\src;.\src\support_pacage\inc;.\src\support_pacage\arm;.\src\support_pacage\gcc;.\src\support_pacage\gcc\linker;.\src\support_pacage;.\src\cmsis;.\src\OpenMV;.\src\pin_setup;.\src\motor;.\src\motors;.\src\IRLocator;.\src\time_service;.\src\kicker;.\src\i2c;.\src\SPI;.\src\ball_detour;.\src\UART;.\src\robot_math;.\src\dribler;.\src\adc;.\src\dma;.\src\main;.\src\voltmeter;.\src\mpu9250_spi;.\src\SPI_DOT;.\src\UART\usart2;.\src\UART\usart3;.\src\UART\usart6;.\src\Robot</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -423,10 +423,17 @@
               <FileType>5</FileType>
               <FilePath>.\src\main\tools.h</FilePath>
             </File>
+            <File>
+              <FileName>Settings.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\Settings.h</FilePath>
+            </File>
+            <File>
+              <FileName>tools.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\tools.cpp</FilePath>
+            </File>
           </Files>
-        </Group>
-        <Group>
-          <GroupName>global_macros</GroupName>
         </Group>
         <Group>
           <GroupName>spl4</GroupName>
@@ -494,32 +501,35 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>usart3</GroupName>
+          <GroupName>Robot</GroupName>
           <Files>
             <File>
-              <FileName>usart3.h</FileName>
+              <FileName>Robot.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\src\usart3\usart3.h</FilePath>
-            </File>
-            <File>
-              <FileName>usart3.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\usart3\usart3.cpp</FilePath>
+              <FilePath>.\src\Robot\Robot.h</FilePath>
             </File>
           </Files>
         </Group>
         <Group>
-          <GroupName>OpenMv</GroupName>
+          <GroupName>global_macros</GroupName>
+        </Group>
+        <Group>
+          <GroupName>Maths</GroupName>
           <Files>
             <File>
-              <FileName>OpenMV.h</FileName>
+              <FileName>ball_detour.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\src\OpenMV\OpenMV.h</FilePath>
+              <FilePath>.\src\ball_detour\ball_detour.h</FilePath>
             </File>
             <File>
-              <FileName>OpenMV.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\OpenMV\OpenMV.cpp</FilePath>
+              <FileName>robot_math.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\robot_math\robot_math.h</FilePath>
+            </File>
+            <File>
+              <FileName>points_movement.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\robot_math\points_movement.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -539,36 +549,6 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>motor</GroupName>
-          <Files>
-            <File>
-              <FileName>motor.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\motor\motor.h</FilePath>
-            </File>
-            <File>
-              <FileName>motor.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\motor\motor.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>motors</GroupName>
-          <Files>
-            <File>
-              <FileName>motors.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\motors\motors.h</FilePath>
-            </File>
-            <File>
-              <FileName>motors.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\motors\motors.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
           <GroupName>time_service</GroupName>
           <Files>
             <File>
@@ -584,62 +564,37 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>usart6</GroupName>
+          <GroupName>UART</GroupName>
           <Files>
+            <File>
+              <FileName>uart2.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\UART\usart2\uart2.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>usart2.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\UART\usart2\usart2.h</FilePath>
+            </File>
+            <File>
+              <FileName>usart3.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\UART\usart3\usart3.h</FilePath>
+            </File>
+            <File>
+              <FileName>usart3.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\UART\usart3\usart3.cpp</FilePath>
+            </File>
             <File>
               <FileName>usart6.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\src\usart6\usart6.h</FilePath>
+              <FilePath>.\src\UART\usart6\usart6.h</FilePath>
             </File>
             <File>
               <FileName>usart6.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\src\usart6\usart6.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>i2c</GroupName>
-          <Files>
-            <File>
-              <FileName>soft_i2c.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\i2c\soft_i2c.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>soft_i2c.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\i2c\soft_i2c.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>IRLocator360</GroupName>
-          <Files>
-            <File>
-              <FileName>IRLocator.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\IRLocator\IRLocator.h</FilePath>
-            </File>
-            <File>
-              <FileName>IRLocator.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\IRLocator\IRLocator.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>kicker</GroupName>
-          <Files>
-            <File>
-              <FileName>kicker.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\kicker\kicker.h</FilePath>
-            </File>
-            <File>
-              <FileName>kicker.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\kicker\kicker.cpp</FilePath>
+              <FilePath>.\src\UART\usart6\usart6.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -684,82 +639,17 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>UART</GroupName>
+          <GroupName>i2c</GroupName>
           <Files>
             <File>
-              <FileName>UART.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\UART\UART.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>uart2</GroupName>
-          <Files>
-            <File>
-              <FileName>usart2.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\usart2\usart2.h</FilePath>
-            </File>
-            <File>
-              <FileName>uart2.cpp</FileName>
+              <FileName>soft_i2c.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\src\usart2\uart2.cpp</FilePath>
+              <FilePath>.\src\i2c\soft_i2c.cpp</FilePath>
             </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>bluetooth</GroupName>
-          <Files>
             <File>
-              <FileName>hc-05.h</FileName>
+              <FileName>soft_i2c.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\src\bluetooth\hc-05\hc-05.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>dribler</GroupName>
-          <Files>
-            <File>
-              <FileName>dribler.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\dribler\dribler.h</FilePath>
-            </File>
-            <File>
-              <FileName>dribler.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\dribler\dribler.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Maths</GroupName>
-          <Files>
-            <File>
-              <FileName>ball_detour.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\ball_detour\ball_detour.h</FilePath>
-            </File>
-            <File>
-              <FileName>robot_math.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\robot_math\robot_math.h</FilePath>
-            </File>
-            <File>
-              <FileName>points_movement.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\robot_math\points_movement.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Bounds</GroupName>
-          <Files>
-            <File>
-              <FileName>Bounds.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Bounds.h</FilePath>
+              <FilePath>.\src\i2c\soft_i2c.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -794,17 +684,72 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>TSSP</GroupName>
+          <GroupName>motor</GroupName>
           <Files>
             <File>
-              <FileName>TSSP.h</FileName>
+              <FileName>motor.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\src\TSSP\TSSP.h</FilePath>
+              <FilePath>.\src\motor\motor.h</FilePath>
             </File>
             <File>
-              <FileName>TSSP.cpp</FileName>
+              <FileName>motor.cpp</FileName>
               <FileType>8</FileType>
-              <FilePath>.\src\TSSP\TSSP.cpp</FilePath>
+              <FilePath>.\src\motor\motor.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>motors</GroupName>
+          <Files>
+            <File>
+              <FileName>motors.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\motors\motors.h</FilePath>
+            </File>
+            <File>
+              <FileName>motors.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\motors\motors.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>OpenMv</GroupName>
+          <Files>
+            <File>
+              <FileName>OpenMV.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\OpenMV\OpenMV.h</FilePath>
+            </File>
+            <File>
+              <FileName>OpenMV.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\OpenMV\OpenMV.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>MPU9250_spi</GroupName>
+          <Files>
+            <File>
+              <FileName>mpu9250_spi.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\mpu9250_spi\mpu9250_spi.cpp</FilePath>
+            </File>
+            <File>
+              <FileName>mpu9250_spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\mpu9250_spi\mpu9250_spi.h</FilePath>
+            </File>
+            <File>
+              <FileName>mpu9250_registers_spi.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\mpu9250_spi\mpu9250_registers_spi.h</FilePath>
+            </File>
+            <File>
+              <FileName>IMU_SPI.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\mpu9250_spi\IMU_SPI.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -824,6 +769,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>dribler</GroupName>
+          <Files>
+            <File>
+              <FileName>dribler.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\dribler\dribler.h</FilePath>
+            </File>
+            <File>
+              <FileName>dribler.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\dribler\dribler.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>line</GroupName>
           <Files>
             <File>
@@ -835,41 +795,6 @@
               <FileName>line.cpp</FileName>
               <FileType>8</FileType>
               <FilePath>.\src\line\line.cpp</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>robots</GroupName>
-          <Files>
-            <File>
-              <FileName>robots.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\robots\robots.h</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>MPU9250_spi</GroupName>
-          <Files>
-            <File>
-              <FileName>mpu9250_spi.cpp</FileName>
-              <FileType>8</FileType>
-              <FilePath>.\src\mpu9250_spi\mpu9250_spi.cpp</FilePath>
-            </File>
-            <File>
-              <FileName>mpu9250_spi.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\mpu9250_spi\mpu9250_spi.h</FilePath>
-            </File>
-            <File>
-              <FileName>IMU_SPI.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\IMU_SPI.h</FilePath>
-            </File>
-            <File>
-              <FileName>mpu9250_registers_spi.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\src\mpu9250_spi\mpu9250_registers_spi.h</FilePath>
             </File>
           </Files>
         </Group>
@@ -889,12 +814,57 @@
           </Files>
         </Group>
         <Group>
-          <GroupName>Field</GroupName>
+          <GroupName>IRLocator360</GroupName>
           <Files>
             <File>
-              <FileName>Field.h</FileName>
+              <FileName>IRLocator.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\src\Field\Field.h</FilePath>
+              <FilePath>.\src\IRLocator\IRLocator.h</FilePath>
+            </File>
+            <File>
+              <FileName>IRLocator.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\IRLocator\IRLocator.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>kicker</GroupName>
+          <Files>
+            <File>
+              <FileName>kicker.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\kicker\kicker.h</FilePath>
+            </File>
+            <File>
+              <FileName>kicker.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\kicker\kicker.cpp</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>bluetooth</GroupName>
+          <Files>
+            <File>
+              <FileName>hc-05.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\bluetooth\hc-05\hc-05.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>TSSP</GroupName>
+          <Files>
+            <File>
+              <FileName>TSSP.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>.\src\TSSP\TSSP.h</FilePath>
+            </File>
+            <File>
+              <FileName>TSSP.cpp</FileName>
+              <FileType>8</FileType>
+              <FilePath>.\src\TSSP\TSSP.cpp</FilePath>
             </File>
           </Files>
         </Group>
@@ -907,5 +877,14 @@
     <components/>
     <files/>
   </RTE>
+
+  <LayerInfo>
+    <Layers>
+      <Layer>
+        <LayName>aaa</LayName>
+        <LayPrjMark>1</LayPrjMark>
+      </Layer>
+    </Layers>
+  </LayerInfo>
 
 </Project>
